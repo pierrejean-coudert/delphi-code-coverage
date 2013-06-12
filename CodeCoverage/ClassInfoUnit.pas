@@ -163,6 +163,7 @@ implementation
 
 uses
   Types,
+  IdStrings,
   StrUtils,
   {$IF CompilerVersion < 21}
   StrUtilsD9,
@@ -278,7 +279,7 @@ procedure TModuleList.HandleBreakPoint(
 var
   List: TStrings;
   ClassName: string;
-  ProcedureName: string;
+  Dummy, ProcedureName: string;
   ClsInfo: TClassInfo;
   ProcInfo: TProcedureInfo;
   Module: TModuleInfo;
@@ -294,8 +295,9 @@ begin
       if EndsStr(TProcedureInfo.BodySuffix, List[List.Count - 1]) then
         List.Delete(List.Count - 1);
 
-      ProcedureNameParts := SplitString(List[List.Count - 1], '$');
-      ProcedureName := ProcedureNameParts[0];
+      //ProcedureNameParts :=
+      IdStrings.SplitString(List[List.Count - 1], '$', ProcedureName, Dummy);
+//      ProcedureName := ProcedureNameParts[0];
 
       if List.Count > 2 then
       begin

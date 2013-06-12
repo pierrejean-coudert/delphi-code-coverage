@@ -747,7 +747,7 @@ var
   RootPath: string;
 begin
   Result := ExpandEnvString(APath);
-  if TPath.IsRelativePath(Result) then
+  if Result[1]='.' then
   begin
     RootPath := TPath.GetDirectoryName(TPath.GetFullPath(ASourceFileName));
     Result := TPath.GetFullPath(TPath.Combine(RootPath, Result));

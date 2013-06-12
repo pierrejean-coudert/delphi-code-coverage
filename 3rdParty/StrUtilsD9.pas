@@ -22,7 +22,7 @@ var
   currentDelimiterPosition, nextDelimiterPosition: Integer;
   i: Integer;
 begin
-  {$IF CompilerVersion >= 21}
+  {$IF CompilerVersion >= 22}
   Result := StrUtils.SplitString(S, Delimiters);
   Exit;
   {$IFEND}

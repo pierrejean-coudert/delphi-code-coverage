@@ -4,7 +4,7 @@ program CodeCoverage;
 {$INCLUDE CodeCoverage.inc}
 
 uses
-  FastMM4,
+  //FastMM,
   SysUtils,
   BreakPoint in 'BreakPoint.pas',
   BreakpointList in 'BreakpointList.pas',
@@ -44,7 +44,7 @@ uses
   uConsoleOutput in 'uConsoleOutput.pas',
   HtmlHelper in 'HtmlHelper.pas';
 
-{$Include FastMM4Options.inc}
+//{$Include FastMM4Options.inc}
 var
   // Delphi 7 leaks interfaces from here :-(
   ADebugger: TDebugger;
